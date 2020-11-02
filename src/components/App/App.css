@@ -1,3 +1,11 @@
 .App {
   text-align: center;
 }
+
+.yellow {
+  background-color: rgba(255, 222, 69, 1);
+}
+
+#top-rectangle {
+  height: 50px;
+}

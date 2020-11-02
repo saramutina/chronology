@@ -2,8 +2,9 @@ import Table from 'react-bootstrap/Table';
 import './Table.css';
 
 function TableFunc() {
+
     return (
-        <Table>
+        <Table striped bordered hover>
             <thead>
                 <th>Событие</th>
                 <th>Результат</th>
