@@ -1,7 +1,23 @@
+import { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
 import './Table.css';
+import Object from '../Object/Object';
 
 function TableFunc() {
+
+    const [data, setData] = useState([]);
+    const loadData = async () => {
+        try {
+            const response = await fetch('/api/objects');
+            const jsonResponse = await response.json();
+            setData(jsonResponse);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(() => { loadData() },
+        []);
 
     return (
         <Table striped bordered hover>
@@ -13,27 +29,15 @@ function TableFunc() {
                 <th>Описание события</th>
             </thead>
             <tbody>
-                <tr>
-                    <td>Загрузка нового файла</td>
-                    <td>Доступ запрещен</td>
-                    <td>Объектный объект</td>
-                    <td>Пользователь Апполинарий Петрович</td>
-                    <td>Загружен новый файл</td>
-                </tr>
-                <tr>
-                    <td>Загрузка нового файла</td>
-                    <td>Доступ запрещен</td>
-                    <td>Объектный объект</td>
-                    <td>Пользователь Апполинарий Петрович</td>
-                    <td>Загружен новый файл</td>
-                </tr>
-                <tr>
-                    <td>Загрузка нового файла</td>
-                    <td>Доступ запрещен</td>
-                    <td>Объектный объект</td>
-                    <td>Пользователь Апполинарий Петрович</td>
-                    <td>Загружен новый файл</td>
-                </tr>
+                {data.map((object) =>
+                    <tr>
+                        <td>{object.event}</td>
+                        <td>{object.result}</td>
+                        <td>{object.object}</td>
+                        <td>{object.privelegeOwner}</td>
+                        <td>{object.description}</td>
+                    </tr>
+                )}
             </tbody>
         </Table>
     );

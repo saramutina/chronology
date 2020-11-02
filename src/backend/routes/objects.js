@@ -1,7 +1,7 @@
 const objectRoutes = (app, fs) => {
     const dataPath = './data/objects.json';
 
-    app.get('/objects', (req, res) => {
+    app.get('/api/objects', (req, res) => {
         fs.readFile(dataPath, 'utf8', (err, data) => {
             if (err) {
                 throw err;
