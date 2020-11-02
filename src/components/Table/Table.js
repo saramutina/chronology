@@ -22,11 +22,11 @@ function TableFunc() {
     return (
         <Table striped bordered hover>
             <thead>
-                <th>Событие</th>
-                <th>Результат</th>
-                <th>Объект</th>
-                <th>Пользователь</th>
-                <th>Описание события</th>
+                <th className="dark">Событие</th>
+                <th className="light">Результат</th>
+                <th className="dark">Объект</th>
+                <th className="light">Пользователь</th>
+                <th className="dark">Описание события</th>
             </thead>
             <tbody>
                 {data.map((object) =>

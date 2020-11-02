@@ -1,0 +1,27 @@
+Table {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: 0em;
+}
+thead {
+    font-size: 12px;
+    line-height: 14px;
+    color: #444444;
+}
+
+tbody {
+    font-size: 14px;
+    line-height: 16px;
+    color: #4F4F4F;
+    background-color: rgba(245, 245, 245, 1);
+}
+
+.dark {
+    background-color: rgba(237, 237, 237, 1);
+}
+
+.light {
+    background-color: rgba(245, 245, 245, 1);
+}
