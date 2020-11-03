@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
 import './Table.css';
 
-function TableFunc({choseObject}) {
+function TableFunc({ choseObject }) {
 
     const [data, setData] = useState([]);
     const loadData = async () => {
@@ -15,17 +15,54 @@ function TableFunc({choseObject}) {
         }
     };
 
+    const sortTable = async (column, order) => {
+        try {
+            const response = await fetch(`/api/objects/${column}/${order}`);
+            const jsonResponse = await response.json();
+            setData(jsonResponse);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const [selectedColumn, setSelectedColumn] = useState(null);
+    const [order, setOrder] = useState('');
+    const handleClick = (columnName) => {
+        if (columnName === selectedColumn && order === 'ascending') {
+            setOrder('descending');
+        } else {
+            setSelectedColumn(columnName);
+            setOrder('ascending');
+        }
+        sortTable(selectedColumn, order);
+    }
+
     useEffect(() => { loadData() },
         []);
 
     return (
         <Table striped bordered hover>
             <thead>
-                <th className="dark">Событие</th>
-                <th className="light">Результат</th>
-                <th className="dark">Объект</th>
-                <th className="light">Пользователь</th>
-                <th className="dark">Описание события</th>
+                <th
+                    onClick={() => handleClick('event')}
+                    className="dark"
+                >Событие</th>
+                <th
+                    onClick={() => handleClick('result')}
+                    className="light"
+                >Результат</th>
+                <th
+                    onClick={() => handleClick('object')}
+                    className="dark"
+                >Объект</th>
+                <th
+                    onClick={() => handleClick('privelegeOwner')}
+                    className="light"
+                >Пользователь</th>
+                <th
+                    onClick={() => handleClick('description')}
+                    className="dark"
+                >Описание события</th>
             </thead>
             <tbody>
                 {data.map((object) =>
