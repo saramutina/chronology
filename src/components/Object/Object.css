@@ -1,0 +1,12 @@
+.window {
+    font-family: Roboto;
+    color: #4F4F4F;
+}
+.top {
+    background-color: rgba(255, 222, 69, 1);
+    height: 50px;
+}
+
+.line {
+    background-color: rgba(245, 245, 245, 1);
+}

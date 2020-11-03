@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
 import './Table.css';
-import Object from '../Object/Object';
 
-function TableFunc() {
+function TableFunc({choseObject}) {
 
     const [data, setData] = useState([]);
     const loadData = async () => {
@@ -30,7 +29,7 @@ function TableFunc() {
             </thead>
             <tbody>
                 {data.map((object) =>
-                    <tr>
+                    <tr onClick={() => choseObject(object)}>
                         <td>{object.event}</td>
                         <td>{object.result}</td>
                         <td>{object.object}</td>

@@ -1,5 +1,9 @@
-.App {
+.app {
   text-align: center;
+}
+
+.flex-container {
+  display: flex;
 }
 
 .yellow {
@@ -8,4 +12,5 @@
 
 #top-rectangle {
   height: 50px;
+  width: 100%;
 }

@@ -1,7 +1,7 @@
 Table {
     font-family: Roboto;
     font-style: normal;
-    font-weight: 400;
+    font-weight: normal;
     text-align: left;
     letter-spacing: 0em;
 }
@@ -9,6 +9,12 @@ thead {
     font-size: 12px;
     line-height: 14px;
     color: #444444;
+}
+
+th {
+    height: 50px;
+    font-weight: normal;
+    line-height: 26px;
 }
 
 tbody {
