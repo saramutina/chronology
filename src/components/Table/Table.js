@@ -15,6 +15,9 @@ function TableFunc({ choseObject }) {
         }
     };
 
+    useEffect(() => { loadData() },
+        []);
+
     const sortTable = async (column, order) => {
         try {
             const response = await fetch(`/api/objects/${column}/${order}`);
@@ -27,19 +30,19 @@ function TableFunc({ choseObject }) {
 
     const [selectedColumn, setSelectedColumn] = useState(null);
     const [order, setOrder] = useState('');
+    const [arrow, setArrow] = useState(null);
     const handleClick = (columnName) => {
         if (selectedColumn === columnName && order === 'ascending') {
             setOrder('descending');
+            setArrow('▲');
             sortTable(columnName, 'descending');
         } else {
             setSelectedColumn(columnName);
             setOrder('ascending');
+            setArrow('▼');
             sortTable(columnName, 'ascending');
         }
     }
-
-    useEffect(() => { loadData() },
-        []);
 
     return (
         <Table striped bordered hover>
@@ -47,23 +50,33 @@ function TableFunc({ choseObject }) {
                 <th
                     onClick={() => handleClick('event')}
                     className="dark"
-                >Событие</th>
+                >
+                    Событие {selectedColumn === 'event' ? arrow : null}
+                </th>
                 <th
                     onClick={() => handleClick('result')}
                     className="light"
-                >Результат</th>
+                >
+                    Результат {selectedColumn === 'result' ? arrow : null}
+                </th>
                 <th
                     onClick={() => handleClick('object')}
                     className="dark"
-                >Объект</th>
+                >
+                    Объект {selectedColumn === 'object' ? arrow : null}
+                </th>
                 <th
                     onClick={() => handleClick('privelegeOwner')}
                     className="light"
-                >Пользователь</th>
+                >
+                    Пользователь {selectedColumn === 'privelegeOwner' ? arrow : null}
+                </th>
                 <th
                     onClick={() => handleClick('description')}
                     className="dark"
-                >Описание события</th>
+                >
+                    Описание события {selectedColumn === 'description' ? arrow : null}
+                </th>
             </thead>
             <tbody>
                 {data.map((object) =>
