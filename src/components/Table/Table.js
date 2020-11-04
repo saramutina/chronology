@@ -28,13 +28,14 @@ function TableFunc({ choseObject }) {
     const [selectedColumn, setSelectedColumn] = useState(null);
     const [order, setOrder] = useState('');
     const handleClick = (columnName) => {
-        if (columnName === selectedColumn && order === 'ascending') {
+        if (selectedColumn === columnName && order === 'ascending') {
             setOrder('descending');
+            sortTable(columnName, 'descending');
         } else {
             setSelectedColumn(columnName);
             setOrder('ascending');
+            sortTable(columnName, 'ascending');
         }
-        sortTable(selectedColumn, order);
     }
 
     useEffect(() => { loadData() },
