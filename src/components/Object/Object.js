@@ -51,7 +51,7 @@ function ObjectFunc({ object }) {
             </div>
             <div className="line">
                 <div className="title">Права:</div>
-                <div className="info">{object.privileges}</div>
+                <div className="info">{object.privileges.join('\n')}</div>
             </div>
         </div>
     );

@@ -1,48 +1,18 @@
-import { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
 import './Table.css';
 
-function TableFunc({ choseObject }) {
-
-    const [data, setData] = useState([]);
-    const loadData = async () => {
-        try {
-            const response = await fetch('/api/objects');
-            const jsonResponse = await response.json();
-            setData(jsonResponse);
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    useEffect(() => { loadData() },
-        []);
-
-    const sortTable = async (column, order) => {
-        try {
-            const response = await fetch(`/api/objects/${column}/${order}`);
-            const jsonResponse = await response.json();
-            setData(jsonResponse);
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    const [selectedColumn, setSelectedColumn] = useState(null);
-    const [order, setOrder] = useState('');
-    const [arrow, setArrow] = useState(null);
+function TableFunc({ data, choseObject, selectedColumn, setSelectedColumn, order, setOrder, arrow, setArrow, sortTable}) {
+    
     const handleClick = (columnName) => {
         if (selectedColumn === columnName && order === 'ascending') {
             setOrder('descending');
             setArrow('▲');
-            sortTable(columnName, 'descending');
         } else {
             setSelectedColumn(columnName);
             setOrder('ascending');
             setArrow('▼');
-            sortTable(columnName, 'ascending');
         }
-    }
+    };
 
     return (
         <Table striped bordered hover>
