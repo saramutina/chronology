@@ -1,4 +1,5 @@
 import Pagination from 'react-bootstrap/Pagination';
+import './Pagination.css';
 
 function PaginationFunc({ dataSize, selectPage, selectedPage, itemsPerPage }) {
 

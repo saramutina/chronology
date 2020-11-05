@@ -4,10 +4,18 @@
 
 .flex-container {
   display: flex;
+  box-sizing: content-box;
 }
 
 .yellow {
   background-color: rgba(255, 222, 69, 1);
+}
+
+.top-burger {
+  float: right;
+  position: relative;
+  top: 20px;
+  right: 20px;
 }
 
 #top-rectangle {

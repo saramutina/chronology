@@ -1,12 +1,51 @@
 .window {
     font-family: Roboto;
     color: #4F4F4F;
+    margin-left: 13px;
 }
 .top {
     background-color: rgba(255, 222, 69, 1);
     height: 50px;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-indent: 30px;
+}
+
+.info-box {
+    background-color: rgba(245, 245, 245, 1);
+    padding: 18px;
+    height: 775px;
 }
 
 .line {
-    background-color: rgba(245, 245, 245, 1);
+    display: flex;
+    padding: 7px;
+}
+
+.title {
+    text-align: left;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    flex: 0 0 160px;
+}
+
+.info {
+    flex: 1 1 300;
+    text-align: left;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+a.info {
+    display: flex;  
+    flex-wrap: wrap;
+    font-size: 12px;
+    padding-left: 0px;
+}
+
+.object-icon {
+    margin-right: 10px;
 }

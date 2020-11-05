@@ -49,12 +49,19 @@ function App() {
 
   const [selectedObject, setSelectedObject] = useState(null);
 
+  const menuBurger = <svg className="top-burger" width="10" height="10" viewBox="0 0 10 10" fill="none">
+        <rect width="10" height="2" fill="#696969" />
+        <rect y="4" width="10" height="2" fill="#696969" />
+        <rect y="8" width="10" height="2" fill="#696969" />
+    </svg>
+
   return (
     <div className="app">
-      <div className="yellow box" id="top-rectangle"></div>
+      <div className="yellow box" id="top-rectangle">{menuBurger}</div>
       <div className="flex-container">
         <TableFunc
           data={data}
+          selectedObject={selectedObject}
           choseObject={setSelectedObject}
           selectedColumn={selectedColumn}
           setSelectedColumn={setSelectedColumn}

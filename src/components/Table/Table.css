@@ -24,10 +24,30 @@ tbody {
     background-color: rgba(245, 245, 245, 1);
 }
 
+th svg {
+    float: right;
+    position: relative;
+    top: 8px;
+}
+
+.background {
+    background-color: rgba(245, 245, 245, 1);
+    flex: 1 1 auto;
+    height: 825px;
+}
+
 .dark {
     background-color: rgba(237, 237, 237, 1);
 }
 
 .light {
     background-color: rgba(245, 245, 245, 1);
+}
+
+.selected, .table-hover tbody tr.selected:hover {
+    background-color: rgba(255, 222, 69, 1);
+}
+
+.app .table th, .app .table td {
+    border: none;
 }

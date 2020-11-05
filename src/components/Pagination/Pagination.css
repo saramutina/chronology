@@ -1,0 +1,14 @@
+.app .page-link {
+    color: #444444;;
+}
+
+.app .page-link:hover {
+    color: #4F4F4F;
+}
+
+
+.app .page-item.active .page-link {
+    background-color: rgba(255, 222, 69, 1);
+    border-color: rgba(255, 222, 69, 1);
+    color: #444444;;
+}
