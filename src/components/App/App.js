@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import TableFunc from '../Table/Table';
 import ObjectFunc from '../Object/Object';
 import PaginationFunc from '../Pagination/Pagination';
+import menuImg from './menuImg.png';
+import userImg from './userImg.png';
 
 function App() {
 
@@ -50,14 +52,30 @@ function App() {
   const [selectedObject, setSelectedObject] = useState(null);
 
   const menuBurger = <svg className="top-burger" width="10" height="10" viewBox="0 0 10 10" fill="none">
-        <rect width="10" height="2" fill="#696969" />
-        <rect y="4" width="10" height="2" fill="#696969" />
-        <rect y="8" width="10" height="2" fill="#696969" />
-    </svg>
+    <rect width="10" height="2" fill="#696969" />
+    <rect y="4" width="10" height="2" fill="#696969" />
+    <rect y="8" width="10" height="2" fill="#696969" />
+  </svg>;
 
   return (
     <div className="app">
-      <div className="yellow box" id="top-rectangle">{menuBurger}</div>
+      <div className="black" id="black-rectangle">
+        <img src={menuImg} />
+      </div>
+      <div id="gray-rectangle">
+        <div className="text-box">
+          <p className="file-path">Главная  /  файловый ресурс</p>
+          <p className="file-name">Региональный аудит АО "82 CP3"</p>
+        </div>
+        <img src={userImg} className="user-img" />
+      </div>
+      <div className="tabs">
+        <div className="tab grey">Пользователи ФР</div>
+        <div className="tab grey">Управление доступом</div>
+        <div className="tab yellow">Хронология</div>
+        <div className="tab grey">Настройки</div>
+      </div>
+      <div className="yellow" id="yellow-rectangle">{menuBurger}</div>
       <div className="flex-container">
         <TableFunc
           data={data}
@@ -81,6 +99,7 @@ function App() {
         selectedPage={selectedPage}
         itemsPerPage={itemsPerPage}
       />
+
     </div>
   );
 }

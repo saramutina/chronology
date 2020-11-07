@@ -4,21 +4,95 @@
 
 .flex-container {
   display: flex;
-  box-sizing: content-box;
+  box-sizing: border-box;
+  margin-left: 60px;
+  margin-right: 20px;
+  border: 3px solid  rgba(255, 222, 69, 1);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .yellow {
   background-color: rgba(255, 222, 69, 1);
 }
 
+.black {
+  background-color: black;
+}
+
+.grey {
+  background-color: rgba(248, 248, 248, 1);
+}
+
+.pagination {
+  margin-left: 60px;
+}
+
 .top-burger {
   float: right;
   position: relative;
-  top: 20px;
-  right: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 
-#top-rectangle {
+.text-box {
+  display: flex;
+  font-family: Roboto;
+  color: rgba(85, 85, 85, 1);
+  flex-direction: column;
+  float: left;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.file-path {
+  font-size: 12px;
+  margin-top: 17px;
+  margin-bottom: 0px;
+}
+
+.file-name {
+  font-size: 14px;
+}
+
+.user-img {
+  float: right;
+  margin-top: 20px;
+  margin-right: 25px;
+}
+
+.tabs {
+  display: flex;
+  font-family: Roboto;
+  color: rgba(94, 94, 94, 1);
+  margin-left: 60px;
+  font-size: 14px;
+}
+
+.tab {
   height: 50px;
-  width: 100%;
+  margin-right: 10px;
+  padding: 17px 20px 15px 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#black-rectangle {
+  width: 40px;
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+#gray-rectangle {
+  height: 70px;
+  margin-left: 40px;
+  background-color: rgba(248, 248, 248, 1);
+  margin-bottom: 10px;
+}
+
+#yellow-rectangle {
+  height: 50px;
+  margin-left: 60px;
+  margin-right: 20px;
 }
